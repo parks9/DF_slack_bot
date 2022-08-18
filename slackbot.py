@@ -149,7 +149,7 @@ def dash_image(name: str, data):
 
     FF = [i.replace('_', ' ') for i in FF]
 
-    plt.title('Flag Occurences in Dark Frames', size=title_size)
+    plt.title('Flag Occurences in Flat Frames', size=title_size)
 
     plt.bar(x3, all_flags[2], width)
     plt.xlabel('Name of flag', size=axis_size)
