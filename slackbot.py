@@ -22,6 +22,21 @@ lightFlags, darkFlags, flatFlags = dfreduce.flags.LightFlags.bit_to_str, dfreduc
 def dash_update(data):
     """
     Returns the dashboard info in a formatted message in markdown.
+    
+    Arguments:
+    ----------
+    
+    data: array-like (pandas DataFrame)
+        The raw data frame containing either all the data, or just the data on a chosen night.
+    
+    
+    Returns:
+    ----------
+    
+    message: str
+        String containing the number of frames for each type, the quality of the frames,
+        the most frequent flag.
+        
     """
     
     #night = datetime.date.today() - datetime.timedelta(days=1)
@@ -61,8 +76,27 @@ def dash_update(data):
    
     
 def dash_image(name: str, data):
-    # x = np.arange(0, 10, 1)
-    # y = np.random.randn(10)
+   
+
+    """
+    Creates three bar charts with the flag distribution of each frame type.
+   
+   
+   Aruments:
+   ----------
+   
+   name: str
+       the i.d. name of the night, will be used to identify the saved figures.
+       
+    data: array-like (pandas DataFrame)
+        The raw data frame containing either all the data, or just the data on a chosen night.
+   
+   Returns:
+   ---------
+   
+   Three strings that are the file names for the three figures.
+   
+   """
     
     test_night = datetime.date(2022,4,7)
     
@@ -172,7 +206,7 @@ def dash_image(name: str, data):
     
     
     
-    
+###CAN IGNORE THIS FUNCTION, CREATED FOR TESTING ###
     
 def multimage(filesdir):
     """
@@ -232,7 +266,9 @@ def multimage(filesdir):
     
 def send_slack_image(filedir: str):
     """
-    Send a image from a local file. 
+    Send a image from a local file.
+    
+    
     """
     
     
@@ -284,6 +320,11 @@ def send_slack_message(message: str):
     
     
     
+    
+    
+    
+    
+
     
 def main(message_text: str):
     """
